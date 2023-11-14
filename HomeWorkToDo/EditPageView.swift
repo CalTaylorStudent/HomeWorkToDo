@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct EditPageView: View{
+    @EnvironmentObject var appData:AppData
     @State private var screen: Int = 1
     var body: some View{
         VStack{
@@ -25,17 +26,19 @@ struct EditPageView: View{
                 }.tabItem{}.tag(2)
             }
             Spacer()
-            ControlGroup{
+            HStack{
                 Button("Edit"){
                     
-                }
+                }.foregroundColor(.cyan).padding()
+                Spacer()
                 Button("Home"){
-                    
-                }
+                    appData.currentScreen = 0;
+                }.foregroundColor(.white).padding()
+                Spacer()
                 Button("Settings"){
-                    
-                }
-            }.padding()
+                    appData.currentScreen = 1;
+                }.foregroundColor(.white).padding()
+            }.background(.black)
         }
     }
 }

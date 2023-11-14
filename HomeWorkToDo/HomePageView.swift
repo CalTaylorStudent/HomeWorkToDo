@@ -1,19 +1,22 @@
 import SwiftUI
 
 struct HomePageView: View {
+    @EnvironmentObject var appData:AppData
+    @State private var filter:Int = 1
     var body: some View {
         VStack {
             HStack{
                 Text("To Do:").font(.largeTitle).bold().foregroundColor(.blue)
                 Spacer()
                 Text("Filter:").foregroundColor(.cyan).font(.title2)
-                Picker(selection: .constant(1), label: Text("Picker")) {
+                Picker(selection: $filter, label: Text("Picker")) {
                     Text("Subject").tag(1)
                     Text("Due Date").tag(2)
                 }
             }.padding()
             Divider()
             ScrollView {
+                //Need to create an assignment class that will consist of all the details that go along with the assignment object. One of which needs to be a variable for completed, in progress, or late.
                 HStack{
                     Picker(selection: .constant(1), label: Text("Progress")){
                         Image(systemName: "circle").tag(1)
@@ -60,17 +63,19 @@ struct HomePageView: View {
                 }
             }.font(.system(size: 22)).multilineTextAlignment(.center).padding()
             Spacer()
-            ControlGroup{
+            HStack{
                 Button("Edit"){
-                    
-                }
+                    appData.currentScreen = 2;
+                }.foregroundColor(.white).padding()
+                Spacer()
                 Button("Home"){
                     
-                }
+                }.foregroundColor(.cyan).padding()
+                Spacer()
                 Button("Settings"){
-                    
-                }
-            }.padding()
+                    appData.currentScreen = 1;
+                }.foregroundColor(.white).padding()
+            }.background(.black)
         }
     }
 }

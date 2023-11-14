@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsPageView: View{
-    
+    @EnvironmentObject var appData:AppData
     @State private var name: String = ""
     @State private var year: String = ""
     
@@ -10,8 +10,8 @@ struct SettingsPageView: View{
             Text("Settings").font(.largeTitle).bold().foregroundColor(.blue).padding()
             Divider()
             GroupBox() {
-                Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-                    Text("Setting")
+                Toggle(isOn: $appData.doneDisappear) {
+                    Text("Completed Assignments Disappear")
                 }.padding(.bottom, 10)
                 Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Is On@*/.constant(true)/*@END_MENU_TOKEN@*/) {
                     Text("Setting")
@@ -36,17 +36,19 @@ struct SettingsPageView: View{
                 }
             }.padding().font(.system(size: 20))
             Spacer()
-            ControlGroup{
+            HStack{
                 Button("Edit"){
-                    
-                }
+                    appData.currentScreen = 2;
+                }.foregroundColor(.white).padding()
+                Spacer()
                 Button("Home"){
-                    
-                }
+                    appData.currentScreen = 0;
+                }.foregroundColor(.white).padding()
+                Spacer()
                 Button("Settings"){
                     
-                }
-            }.padding()
+                }.foregroundColor(.cyan).padding()
+            }.background(.black)
         }
     }
 }
