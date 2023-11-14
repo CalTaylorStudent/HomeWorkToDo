@@ -13,6 +13,7 @@ class AppData: ObservableObject{
 }
 
 //Need assignment class and subject class, use assignment class to fix picker per assignment on home page. Figure out an order/filter for subject and due date.
+//Struggling to get it to push
 
 @main
 struct HomeWorkToDoApp: App {
