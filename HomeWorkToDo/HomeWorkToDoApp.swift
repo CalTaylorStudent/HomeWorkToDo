@@ -12,6 +12,30 @@ class AppData: ObservableObject{
     @Published var doneDisappear: Bool = false
 }
 
+class Assignment: ObservableObject{
+    @Published var subject: Subject
+    @Published var dueDate: Date
+    @Published var category: String
+    @Published var name: String
+    
+    init(name: String, subject: Subject, dueDate: Date, cat: String){
+        self.subject = subject
+        self.dueDate = dueDate
+        self.name = name
+        self.category = cat
+    }
+}
+
+class Subject: ObservableObject{
+    @Published var subjectName: String
+    @Published var professorName: String
+    
+    init(subjectName: String, profName: String) {
+        self.subjectName = subjectName
+        self.professorName = profName
+    }
+}
+
 //Need assignment class and subject class, use assignment class to fix picker per assignment on home page. Figure out an order/filter for subject and due date.
 //Struggling to get it to push
 
