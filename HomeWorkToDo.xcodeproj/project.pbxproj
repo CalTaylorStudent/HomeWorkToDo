@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		02282BA32B03DE72001751DD /* HomeWorkToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BA22B03DE72001751DD /* HomeWorkToDoApp.swift */; };
-		02282BA52B03DE72001751DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BA42B03DE72001751DD /* ContentView.swift */; };
+		02282BA52B03DE72001751DD /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BA42B03DE72001751DD /* HomePageView.swift */; };
 		02282BA72B03DE73001751DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02282BA62B03DE73001751DD /* Assets.xcassets */; };
 		02282BAA2B03DE73001751DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02282BA92B03DE73001751DD /* Preview Assets.xcassets */; };
 		02282BB42B03DE73001751DD /* HomeWorkToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BB32B03DE73001751DD /* HomeWorkToDoTests.swift */; };
 		02282BBE2B03DE73001751DD /* HomeWorkToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BBD2B03DE73001751DD /* HomeWorkToDoUITests.swift */; };
 		02282BC02B03DE73001751DD /* HomeWorkToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BBF2B03DE73001751DD /* HomeWorkToDoUITestsLaunchTests.swift */; };
+		02282BCD2B03DF22001751DD /* EditPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BCC2B03DF22001751DD /* EditPageView.swift */; };
+		02282BCF2B03DF60001751DD /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02282BCE2B03DF60001751DD /* SettingsPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		02282B9F2B03DE72001751DD /* HomeWorkToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02282BA22B03DE72001751DD /* HomeWorkToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkToDoApp.swift; sourceTree = "<group>"; };
-		02282BA42B03DE72001751DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02282BA42B03DE72001751DD /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		02282BA62B03DE73001751DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02282BA92B03DE73001751DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		02282BAF2B03DE73001751DD /* HomeWorkToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeWorkToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		02282BB92B03DE73001751DD /* HomeWorkToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeWorkToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02282BBD2B03DE73001751DD /* HomeWorkToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkToDoUITests.swift; sourceTree = "<group>"; };
 		02282BBF2B03DE73001751DD /* HomeWorkToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02282BCC2B03DF22001751DD /* EditPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageView.swift; sourceTree = "<group>"; };
+		02282BCE2B03DF60001751DD /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				02282BA22B03DE72001751DD /* HomeWorkToDoApp.swift */,
-				02282BA42B03DE72001751DD /* ContentView.swift */,
+				02282BA42B03DE72001751DD /* HomePageView.swift */,
+				02282BCC2B03DF22001751DD /* EditPageView.swift */,
+				02282BCE2B03DF60001751DD /* SettingsPageView.swift */,
 				02282BA62B03DE73001751DD /* Assets.xcassets */,
 				02282BA82B03DE73001751DD /* Preview Content */,
 			);
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02282BA52B03DE72001751DD /* ContentView.swift in Sources */,
+				02282BA52B03DE72001751DD /* HomePageView.swift in Sources */,
+				02282BCD2B03DF22001751DD /* EditPageView.swift in Sources */,
+				02282BCF2B03DF60001751DD /* SettingsPageView.swift in Sources */,
 				02282BA32B03DE72001751DD /* HomeWorkToDoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,9 +422,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeWorkToDo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -431,6 +441,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CalTaylor.HomeWorkToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,9 +453,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeWorkToDo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -459,6 +472,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CalTaylor.HomeWorkToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
