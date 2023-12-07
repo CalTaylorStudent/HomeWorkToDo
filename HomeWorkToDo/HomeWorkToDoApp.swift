@@ -1,43 +1,44 @@
-//
-//  HomeWorkToDoApp.swift
-//  HomeWorkToDo
-//
-//  Created by Cal M. Taylor on 11/14/23.
-//
-
 import SwiftUI
 
 class AppData: ObservableObject{
     @Published var currentScreen: Int = 0
     @Published var doneDisappear: Bool = false
+    @Published var assignmentList: Array<Assignment>
+    @Published var subjectList: Array<String>
+    
+    init(){
+        assignmentList = []
+        subjectList = []
+    }
 }
 
-class Assignment: ObservableObject{
-    @Published var subject: Subject
-    @Published var dueDate: Date
+class Assignment: Hashable {
+    @Published var subject: String
+    @Published var dueDate: String
     @Published var category: String
     @Published var name: String
     
-    init(name: String, subject: Subject, dueDate: Date, cat: String){
-        self.subject = subject
+    init(name: String, dueDate: String, category: String, subject:String){
         self.dueDate = dueDate
         self.name = name
-        self.category = cat
+        self.category = category
+        self.subject = subject
+    }
+    
+    static func == (first:Assignment, second:Assignment) -> Bool {
+        return first.subject == second.subject && first.dueDate == second.dueDate && first.category == second.category && first.name == second.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(subject)
+        hasher.combine(dueDate)
+        hasher.combine(category)
+        hasher.combine(name)
     }
 }
 
-class Subject: ObservableObject{
-    @Published var subjectName: String
-    @Published var professorName: String
-    
-    init(subjectName: String, profName: String) {
-        self.subjectName = subjectName
-        self.professorName = profName
-    }
-}
 
 //Need assignment class and subject class, use assignment class to fix picker per assignment on home page. Figure out an order/filter for subject and due date.
-//Struggling to get it to push
 
 @main
 struct HomeWorkToDoApp: App {

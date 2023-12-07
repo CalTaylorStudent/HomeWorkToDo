@@ -3,6 +3,8 @@ import SwiftUI
 struct HomePageView: View {
     @EnvironmentObject var appData:AppData
     @State private var filter:Int = 1
+    
+    
     var body: some View {
         VStack {
             HStack{
@@ -16,50 +18,16 @@ struct HomePageView: View {
             }.padding()
             Divider()
             ScrollView {
-                //Need to create an assignment class that will consist of all the details that go along with the assignment object. One of which needs to be a variable for completed, in progress, or late.
-                HStack{
-                    Picker(selection: .constant(1), label: Text("Progress")){
-                        Image(systemName: "circle").tag(1)
-                        Image(systemName: "checkmark.circle.fill").tag(2)
-                        Image(systemName: "timer").tag(3)
+                ForEach(appData.assignmentList, id: \.self) { assign in
+                    HStack{
+                        Picker(selection: .constant(1), label: Text("Progress")){
+                            Image(systemName: "circle").tag(1)
+                            Image(systemName: "checkmark.circle.fill").tag(2)
+                            Image(systemName: "timer").tag(3)
+                        }
+                        Text("Name: \(assign.name)\nDue Date: \(assign.dueDate)\nCategory: \(assign.category) \nSubject: \(assign.subject)")
                     }
-                    Text("Scrollable assignments section which will be the host for all of the assignments on the Home Page View.")
-                }
-                Divider()
-                HStack{
-                    Picker(selection: .constant(1), label: Text("Progress")){
-                        Image(systemName: "circle").tag(1)
-                        Image(systemName: "checkmark.circle.fill").tag(2)
-                        Image(systemName: "timer").tag(3)
-                    }
-                    Text("If sorted by due date, then top assignment will be next due.").foregroundColor(.cyan)
-                }
-                Divider()
-                HStack{
-                    Picker(selection: .constant(1), label: Text("Progress")){
-                        Image(systemName: "circle").tag(1)
-                        Image(systemName: "checkmark.circle.fill").tag(2)
-                        Image(systemName: "timer").tag(3)
-                    }
-                    Text("If sorted by Subject, then all assignments belonging to a subject would be shown in their own chunks.")
-                }
-                Divider()
-                HStack{
-                    Picker(selection: .constant(1), label: Text("Progress")){
-                        Image(systemName: "circle").tag(1)
-                        Image(systemName: "checkmark.circle.fill").tag(2)
-                        Image(systemName: "timer").tag(3)
-                    }
-                    Text("Yet to decide whethere class 'chunks' show alphabetically or some other way i.e. class with next due date shows first, class with lowest grade...").foregroundColor(.cyan)
-                }
-                Divider()
-                HStack{
-                    Picker(selection: .constant(1), label: Text("Progress")){
-                        Image(systemName: "circle").tag(1)
-                        Image(systemName: "checkmark.circle.fill").tag(2)
-                        Image(systemName: "timer").tag(3)
-                    }
-                    Text("Each of these assignments will be an HStack: Picker on left{Completed, In Progress, To-Do}, and Assignment Details on the Right")
+                    Divider()
                 }
             }.font(.system(size: 22)).multilineTextAlignment(.center).padding()
             Spacer()
@@ -78,4 +46,10 @@ struct HomePageView: View {
             }.background(.black)
         }
     }
+    func getStrings(assign: Assignment) -> String {
+        
+        return "Name: \(assign.name)\nDue Date: \(assign.dueDate)\nCategory: \(assign.category) \nSubject: \(assign.subject)"
+    }
+    
+    
 }
